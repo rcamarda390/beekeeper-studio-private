@@ -1,12 +1,12 @@
 @use "sass:color";
 
-// Shared upgrade prompt used inside the upgrade modal AND inline in tabs
-// (multi-table export, import-from-file, backup, plugins, AI shell).
+// Shared upgrade notice used inside the upgrade modal AND inline in tabs
+// (multi-table export, import-from-file, backup, plugins, connection screen).
+// It states that a feature needs a paid license and nothing more.
 //
 // The panel renders standard dialog markup — .dialog-content, .dialog-c-title,
 // .dialog-c-subtitle — so it inherits the chrome every other dialog in the app
-// gets from vue-js-modal.scss. Only the bits that don't exist elsewhere live
-// here: the feature list, the link row, and the standalone card surface.
+// gets from vue-js-modal.scss. Only the standalone card surface lives here.
 
 .upgrade-panel {
   width: 100%;
@@ -22,64 +22,6 @@
     margin: 0;
   }
 
-  // Two-column checklist of what a paid license includes.
-  .upgrade-feature-list {
-    margin: $gutter-w 0 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: $gutter-w * 1.5;
-    row-gap: $gutter-h;
-
-    li {
-      display: flex;
-      align-items: center;
-      gap: $gutter-h * 1.25;
-      font-size: 0.875rem;
-      color: $text;
-    }
-
-    .material-icons {
-      font-size: 16px;
-      color: $text-lighter;
-      flex-shrink: 0;
-    }
-  }
-
-  .upgrade-panel-links {
-    margin: $gutter-w 0 0;
-    font-size: 0.8rem;
-    line-height: 1.5;
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: $gutter-h * 0.875;
-      color: $text;
-      text-decoration: none;
-
-      span {
-        text-decoration: underline;
-        text-decoration-color: rgba($theme-base, 0.25);
-      }
-      &:hover span {
-        text-decoration-color: currentColor;
-      }
-      .material-icons {
-        font-size: 16px;
-        color: $text-lighter;
-      }
-    }
-  }
-
-  // The shared upsell buttons are this panel's dialog footer, so give them the
-  // same metrics .vue-dialog-buttons uses everywhere else.
-  > .upsell-buttons {
-    padding: 0 $gutter-w $gutter-w;
-    padding-left: $gutter-w * 1.5;
-  }
-
   // Standalone (inline in a tab, or on the connection screen): the panel
   // supplies the card surface a modal would otherwise provide.
   &.upgrade-panel--standalone {
@@ -88,11 +30,6 @@
     background: color.adjust($theme-bg, $lightness: 1%);
     border-radius: 8px;
     @include card-shadow;
-
-    // Panels with a preview in the slot need more room.
-    &.upgrade-panel--wide {
-      max-width: 620px;
-    }
   }
 }
 

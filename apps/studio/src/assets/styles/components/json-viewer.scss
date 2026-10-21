@@ -107,42 +107,6 @@
     }
   }
 
-  .community-overlay {
-    position: absolute;
-    z-index: 10;
-    inset: 0;
-    backdrop-filter: blur(6px);
-    background-color: rgba($theme-bg, 0.5);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-
-    .title {
-      display: flex;
-      flex-direction: row;
-      font-weight: 700;
-      align-items: center;
-      i.material-icons {
-        margin-right: 0.5rem;
-      }
-    }
-
-    .body {
-      line-height: 1.25;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: end;
-      margin-top: 1rem;
-      padding-right: 0;
-    }
-  }
-
   .empty-text {
     position: absolute;
     inset: 0;

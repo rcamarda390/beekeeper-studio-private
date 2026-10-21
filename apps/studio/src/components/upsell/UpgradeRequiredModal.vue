@@ -17,7 +17,6 @@
         </button>
         <upgrade-panel
           :feature-name="featureName"
-          @started-trial="close"
         />
       </div>
     </modal>
