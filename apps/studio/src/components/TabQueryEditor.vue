@@ -202,12 +202,7 @@
             @click="dryRun = !dryRun"
           >
             <x-label>Dry Run</x-label>
-            <i
-              v-if="isCommunity"
-              class="material-icons menu-icon"
-            >stars</i>
             <input
-              v-else
               type="checkbox"
               v-model="dryRun"
             >
@@ -273,12 +268,6 @@
                 >
                   <x-label>{{ runPrimaryText(true) }}</x-label>
                   <x-shortcut :value="displayShortcut('queryEditor.primaryQueryToFileAction')" />
-                  <i
-                    v-if="isCommunity"
-                    class="material-icons menu-icon "
-                  >
-                    stars
-                  </i>
                 </x-menuitem>
                 <x-menuitem
                   @click.prevent="queryFunctions.secondaryWrite"
@@ -286,12 +275,6 @@
                 >
                   <x-label>{{ runSecondaryText(true) }}</x-label>
                   <x-shortcut :value="displayShortcut('queryEditor.secondaryQueryToFileAction')" />
-                  <i
-                    v-if="isCommunity"
-                    class="material-icons menu-icon"
-                  >
-                    stars
-                  </i>
                 </x-menuitem>
               </x-menu>
             </x-button>
